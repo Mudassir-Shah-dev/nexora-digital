@@ -1,0 +1,863 @@
+/* =========================
+   HERO MAIN CONTAINER
+   ========================= */
+
+.container {
+    min-height: 600px;
+    background-color: #f8fbff;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    overflow: hidden;
+}
+
+/* =========================
+   LEFT CONTENT
+   ========================= */
+
+.left {
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 40px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    max-width: 580px;
+    width: 100%;
+
+    animation: heroContentIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Eyebrow */
+
+.shopping {
+    color: #2563ff;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+
+    margin: 0 0 14px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    animation: heroFadeUp 0.7s ease both;
+    animation-delay: 0.1s;
+}
+
+/* Main heading */
+
+.content h1 {
+    font-size: clamp(44px, 4.4vw, 64px);
+    font-weight: 800;
+    line-height: 1.07;
+
+    margin: 0;
+
+    color: #0b1f3a;
+    letter-spacing: -0.035em;
+
+    animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: 0.2s;
+}
+
+/* Description */
+
+.para {
+    margin: 24px 0 0;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    color: #475569;
+
+    animation: heroFadeUp 0.8s ease both;
+    animation-delay: 0.35s;
+}
+
+.para p {
+    margin: 0;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.btn {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 12px;
+    margin-top: 28px;
+
+    animation: heroFadeUp 0.8s ease both;
+    animation-delay: 0.45s;
+}
+
+/* Primary button */
+
+.explore {
+    background-color: #2563ff;
+    color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+
+    cursor: pointer;
+
+    border: 1px solid transparent;
+    border-radius: 9px;
+
+    min-height: 48px;
+    padding: 0 20px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.explore:hover {
+    background-color: #1d4ed8;
+    box-shadow: 0 8px 20px rgba(37, 99, 255, 0.22);
+
+    transform: translateY(-3px);
+}
+
+.explore svg {
+    transition: transform 0.3s ease;
+}
+
+.explore:hover svg {
+    transform: translateX(4px);
+}
+
+.explore:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* Secondary button */
+
+.browse {
+    color: #0b1f3a;
+    background: #fff;
+
+    cursor: pointer;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+
+    min-height: 48px;
+    padding: 0 20px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.browse:hover {
+    background-color: #eff6ff;
+    border-color: #2563ff;
+
+    box-shadow: 0 5px 16px rgba(11, 31, 58, 0.07);
+
+    transform: translateY(-3px);
+}
+
+.browse:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* Accessible keyboard focus */
+
+.explore:focus-visible,
+.browse:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 4px;
+}
+
+/* =========================
+   TRUST / PROOF SECTION
+   ========================= */
+
+.proof {
+    color: #64748b;
+
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 28px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    animation: heroFadeUp 0.8s ease both;
+    animation-delay: 0.55s;
+}
+
+.proof svg {
+    flex-shrink: 0;
+}
+
+/* =========================
+   RIGHT SIDE / IMAGE AREA
+   ========================= */
+
+.right {
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px 40px;
+}
+
+.image {
+    height: 470px;
+    position: relative;
+
+    width: 100%;
+    max-width: 500px;
+
+    animation: heroImageIn 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: 0.15s;
+}
+
+/* Main image */
+
+.mainImage {
+    width: calc(100% - 38px);
+    height: 100%;
+
+    box-shadow: var(--shadow);
+    background: #fff;
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    animation: mainPictureIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.mainImage img {
+    object-fit: cover;
+    object-position: center 53%;
+
+    height: 100%;
+    width: 100%;
+
+    display: block;
+
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mainImage:hover img {
+    transform: scale(1.035);
+}
+
+/* =========================
+   FLOATING WATCH IMAGE
+   ========================= */
+
+.watchImage,
+.secondClass {
+    top: -22px;
+    right: 0;
+}
+
+.watchImage {
+    background: #fff;
+    border: 6px solid #fff;
+
+    border-radius: 12px;
+
+    width: 142px;
+    height: 142px;
+
+    padding: 6px;
+
+    position: absolute;
+    overflow: hidden;
+
+    box-shadow: 0 14px 34px #0b1f3a29;
+
+    animation:
+        floatingCardIn 0.9s ease both,
+        floatingWatch 5s ease-in-out 1.2s infinite;
+    animation-delay: 0.5s, 1.2s;
+
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.watchImage img {
+    object-fit: cover;
+
+    border-radius: 5px;
+
+    height: 100%;
+    width: 100%;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.watchImage:hover {
+    box-shadow: 0 18px 40px #0b1f3a35;
+}
+
+.watchImage:hover img {
+    transform: scale(1.06);
+}
+
+/* =========================
+   FLOATING SPEAKER IMAGE
+   ========================= */
+
+.speakerImage,
+.speakerSecond {
+    bottom: 36px;
+    right: 0;
+}
+
+.speakerImage {
+    background: #fff;
+    border: 6px solid #fff;
+
+    border-radius: 12px;
+
+    width: 142px;
+    height: 142px;
+
+    padding: 6px;
+
+    position: absolute;
+    overflow: hidden;
+
+    box-shadow: 0 14px 34px #0b1f3a29;
+
+    animation:
+        floatingCardIn 0.9s ease both,
+        floatingSpeaker 5.5s ease-in-out 1.4s infinite;
+    animation-delay: 0.7s, 1.4s;
+
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.speakerImage img {
+    object-fit: cover;
+
+    border-radius: 5px;
+
+    height: 100%;
+    width: 100%;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.speakerImage:hover {
+    box-shadow: 0 18px 40px #0b1f3a35;
+}
+
+.speakerImage:hover img {
+    transform: scale(1.06);
+}
+
+/* =========================
+   IMAGE LABEL
+   ========================= */
+
+.label {
+    border-left: 3px solid #2563ff;
+
+    box-shadow: var(--shadow);
+    background: #fff;
+
+    gap: 3px;
+    padding: 14px 18px;
+
+    display: grid;
+    position: absolute;
+
+    bottom: 24px;
+    left: -24px;
+
+    animation: labelFadeIn 0.8s ease both;
+    animation-delay: 0.9s;
+
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.label:hover {
+    box-shadow: 0 12px 30px rgba(11, 31, 58, 0.12);
+    transform: translateY(-3px);
+}
+
+.label span {
+    color: #64748b;
+
+    text-transform: uppercase;
+    letter-spacing: .1em;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.label strong {
+    color: #0b1f3a;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+/* =========================
+   TOP-LEVEL ANIMATIONS
+   ========================= */
+
+@keyframes heroContentIn {
+    from {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes heroFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroImageIn {
+    from {
+        opacity: 0;
+        transform: translateX(35px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes mainPictureIn {
+    from {
+        clip-path: inset(0 0 100% 0 round 12px);
+    }
+
+    to {
+        clip-path: inset(0 0 0 0 round 12px);
+    }
+}
+
+@keyframes floatingCardIn {
+    from {
+        opacity: 0;
+        scale: 0.8;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes floatingWatch {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+@keyframes floatingSpeaker {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+@keyframes labelFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* =========================
+   LAPTOP RESPONSIVENESS
+   ========================= */
+
+@media (max-width: 1200px) {
+    .left {
+        padding: 50px 30px;
+    }
+
+    .right {
+        padding: 40px 30px;
+    }
+
+    .content h1 {
+        font-size: clamp(42px, 5vw, 58px);
+    }
+
+    .para {
+        font-size: 16px;
+    }
+
+    .image {
+        height: 430px;
+    }
+
+    .watchImage,
+    .speakerImage {
+        width: 125px;
+        height: 125px;
+    }
+}
+
+/* =========================
+   TABLET RESPONSIVENESS
+   ========================= */
+
+@media (max-width: 900px) {
+    .container {
+        min-height: auto;
+    }
+
+    .left {
+        padding: 50px 24px;
+    }
+
+    .right {
+        padding: 40px 24px;
+    }
+
+    .content h1 {
+        font-size: clamp(36px, 5.2vw, 48px);
+    }
+
+    .shopping {
+        font-size: 10px;
+        letter-spacing: 0.1em;
+    }
+
+    .para {
+        font-size: 14px;
+        line-height: 1.7;
+        margin-top: 18px;
+    }
+
+    .btn {
+        gap: 10px;
+        margin-top: 22px;
+    }
+
+    .explore,
+    .browse {
+        min-height: 44px;
+        padding: 0 14px;
+        font-size: 12px;
+    }
+
+    .proof {
+        gap: 7px;
+        margin-top: 22px;
+        font-size: 10px;
+    }
+
+    .proof svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .image {
+        height: 350px;
+    }
+
+    .watchImage,
+    .speakerImage {
+        width: 105px;
+        height: 105px;
+        border-width: 4px;
+        padding: 4px;
+    }
+
+    .watchImage,
+    .secondClass {
+        top: -14px;
+    }
+
+    .speakerImage,
+    .speakerSecond {
+        bottom: 24px;
+    }
+
+    .label {
+        bottom: 18px;
+        left: -14px;
+        padding: 11px 14px;
+    }
+
+    .label strong {
+        font-size: 12px;
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+   ========================= */
+
+@media (max-width: 650px) {
+    .container {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .left {
+        width: 100%;
+        padding: 55px 24px 35px;
+        justify-content: flex-start;
+    }
+
+    .content {
+        max-width: 520px;
+    }
+
+    .content h1 {
+        font-size: clamp(42px, 9vw, 58px);
+        line-height: 1.08;
+    }
+
+    .shopping {
+        margin-bottom: 12px;
+        font-size: 11px;
+    }
+
+    .para {
+        font-size: 15px;
+        margin-top: 18px;
+    }
+
+    .para p {
+        display: inline;
+    }
+
+    .para p+p::before {
+        content: " ";
+    }
+
+    .btn {
+        margin-top: 24px;
+        gap: 10px;
+    }
+
+    .explore,
+    .browse {
+        min-height: 46px;
+        padding: 0 16px;
+        font-size: 13px;
+    }
+
+    .proof {
+        margin-top: 24px;
+        font-size: 11px;
+        gap: 8px;
+    }
+
+    .right {
+        width: 100%;
+        padding: 20px 28px 60px;
+    }
+
+    .image {
+        width: 100%;
+        max-width: 480px;
+        height: clamp(300px, 80vw, 430px);
+    }
+
+    .mainImage {
+        width: calc(100% - 30px);
+    }
+
+    .watchImage,
+    .speakerImage {
+        width: clamp(90px, 24vw, 120px);
+        height: clamp(90px, 24vw, 120px);
+    }
+
+    .watchImage,
+    .secondClass {
+        top: -12px;
+    }
+
+    .speakerImage,
+    .speakerSecond {
+        bottom: 22px;
+    }
+
+    .label {
+        left: -12px;
+        bottom: 14px;
+        padding: 12px 15px;
+    }
+}
+
+/* =========================
+   SMALL MOBILE DEVICES
+   ========================= */
+
+@media (max-width: 380px) {
+    .left {
+        padding: 42px 18px 28px;
+    }
+
+    .content h1 {
+        font-size: 38px;
+    }
+
+    .shopping {
+        font-size: 9px;
+    }
+
+    .para {
+        font-size: 13px;
+    }
+
+    .btn {
+        gap: 8px;
+    }
+
+    .explore,
+    .browse {
+        padding: 0 12px;
+        font-size: 11px;
+    }
+
+    .proof {
+        gap: 6px;
+        font-size: 9px;
+    }
+
+    .right {
+        padding: 20px 22px 45px;
+    }
+
+    .image {
+        height: 290px;
+    }
+
+    .watchImage,
+    .speakerImage {
+        width: 85px;
+        height: 85px;
+    }
+
+    .label {
+        padding: 10px 12px;
+    }
+
+    .label span {
+        font-size: 8px;
+    }
+
+    .label strong {
+        font-size: 11px;
+    }
+}
+
+/* =========================
+   ACCESSIBILITY: REDUCED MOTION
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .content,
+    .shopping,
+    .content h1,
+    .para,
+    .btn,
+    .proof,
+    .image,
+    .mainImage,
+    .watchImage,
+    .speakerImage,
+    .label {
+        animation: none !important;
+        opacity: 1;
+        transform: none;
+    }
+
+    .mainImage img,
+    .watchImage img,
+    .speakerImage img,
+    .explore,
+    .explore svg,
+    .browse,
+    .label {
+        transition: none;
+    }
+}

@@ -1,0 +1,500 @@
+/* =========================
+   SUPPORT SECTION
+========================= */
+
+.section {
+    padding: 96px 0;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.container {
+    width: min(100% - 48px, 1280px);
+    margin-inline: auto;
+}
+
+/* =========================
+   MAIN GRID
+========================= */
+
+.grid {
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+    align-items: start;
+    gap: clamp(48px, 7vw, 88px);
+    display: grid;
+}
+
+/* =========================
+   FAQ INTRO
+========================= */
+
+.faqIntro {
+    animation: faqIntroIn .8s ease-out both;
+}
+
+.eyebrow {
+    color: #2563ff;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    margin: 0 0 14px;
+    font-size: 12px;
+    font-weight: 800;
+
+    animation: faqEyebrowIn .65s ease-out both;
+}
+
+.faqIntro h2 {
+    color: #0b1f3a;
+    letter-spacing: -.03em;
+    margin: 0;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.16;
+
+    animation: faqTitleIn .75s ease-out both;
+}
+
+.faqIntro>p:nth-of-type(2) {
+    color: #64748b;
+    line-height: 1.75;
+    font-size: 16px;
+    margin: 18px 0 0;
+
+    animation: faqTextIn .8s ease-out both;
+}
+
+/* =========================
+   CONTACT SUPPORT LINK
+========================= */
+
+.textLink {
+    color: #2563ff;
+    align-items: center;
+    gap: 7px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    margin-top: 22px;
+
+    transition:
+        color .25s ease,
+        transform .25s ease;
+
+    animation: faqLinkIn .8s ease-out both;
+}
+
+.textLink svg {
+    transition: transform .25s ease;
+}
+
+.textLink:hover {
+    color: #0b1f3a;
+    transform: translateX(3px);
+}
+
+.textLink:hover svg {
+    transform: translateX(4px);
+}
+
+/* =========================
+   ACCORDION
+========================= */
+
+.accordion {
+    width: 100%;
+    min-width: 0;
+
+    animation: accordionIn .8s ease-out both;
+}
+
+/* FAQ item */
+
+.faqItem {
+    border-bottom: 1px solid #e2e8f0;
+
+    transition: border-color .3s ease;
+
+    animation: faqItemIn .7s ease-out both;
+}
+
+.faqItem:nth-child(1) {
+    animation-delay: .1s;
+}
+
+.faqItem:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.faqItem:nth-child(3) {
+    animation-delay: .3s;
+}
+
+.faqItem:nth-child(4) {
+    animation-delay: .4s;
+}
+
+.faqItem:first-child {
+    border-top: 1px solid #e2e8f0;
+}
+
+.faqItem:hover {
+    border-bottom-color: #c7d8ff;
+}
+
+/* FAQ question button */
+
+.faqItem>button {
+    width: 100%;
+    min-height: 76px;
+
+    color: #0b1f3a;
+    text-align: left;
+    cursor: pointer;
+
+    background: none;
+    border: 0;
+
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+
+    padding: 16px 0;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+
+    display: flex;
+
+    transition:
+        color .25s ease,
+        padding .25s ease;
+}
+
+.faqItem>button:hover {
+    color: #2563ff;
+}
+
+/* Chevron icon */
+
+.faqItem button svg {
+    color: #64748b;
+    flex-shrink: 0;
+
+    transition:
+        transform .3s ease,
+        color .25s ease;
+}
+
+.faqItem button:hover svg {
+    color: #2563ff;
+}
+
+.isOpen button svg {
+    transform: rotate(180deg);
+    color: #2563ff;
+}
+
+.isOpen>button {
+    color: #2563ff;
+}
+
+/* =========================
+   FAQ ANSWER
+========================= */
+
+.faqAnswer {
+    padding: 0 36px 22px 0;
+
+    animation: faqAnswerIn .3s ease-out both;
+}
+
+.faqAnswer p {
+    color: #64748b;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+/* =========================
+   TOP-LEVEL ANIMATIONS
+========================= */
+
+@keyframes faqIntroIn {
+    from {
+        opacity: 0;
+        transform: translateX(-28px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes faqEyebrowIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+        letter-spacing: .22em;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: .14em;
+    }
+}
+
+@keyframes faqTitleIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes faqTextIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes faqLinkIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes accordionIn {
+    from {
+        opacity: 0;
+        transform: translateX(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes faqItemIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes faqAnswerIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media (max-width: 1200px) {
+    .container {
+        width: min(100% - 72px, 1280px);
+    }
+
+    .grid {
+        gap: 56px;
+    }
+
+    .faqIntro h2 {
+        font-size: clamp(2rem, 3.5vw, 2.6rem);
+    }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+    .section {
+        padding: 76px 0;
+    }
+
+    .container {
+        width: min(100% - 56px, 1280px);
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .faqIntro {
+        max-width: 620px;
+    }
+
+    .faqIntro h2 {
+        font-size: clamp(2rem, 5vw, 2.6rem);
+    }
+
+    .faqIntro>p:nth-of-type(2) {
+        max-width: 580px;
+    }
+
+    .textLink {
+        margin-top: 18px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+    .section {
+        padding: 60px 0;
+    }
+
+    .container {
+        width: min(100% - 32px, 1280px);
+    }
+
+    .grid {
+        gap: 30px;
+    }
+
+    .eyebrow {
+        font-size: 11px;
+        margin-bottom: 12px;
+    }
+
+    .faqIntro h2 {
+        font-size: clamp(1.8rem, 7.5vw, 2.25rem);
+        line-height: 1.2;
+    }
+
+    .faqIntro>p:nth-of-type(2) {
+        font-size: 14px;
+        line-height: 1.7;
+        margin-top: 14px;
+    }
+
+    .textLink {
+        font-size: 13px;
+        margin-top: 16px;
+    }
+
+    .faqItem>button {
+        min-height: 68px;
+        font-size: 14px;
+        gap: 16px;
+        padding: 14px 0;
+    }
+
+    .faqItem button svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .faqAnswer {
+        padding: 0 24px 18px 0;
+    }
+
+    .faqAnswer p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+    .section {
+        padding: 48px 0;
+    }
+
+    .grid {
+        gap: 26px;
+    }
+
+    .faqIntro h2 {
+        font-size: 1.75rem;
+    }
+
+    .faqItem>button {
+        font-size: 13px;
+        min-height: 64px;
+        gap: 12px;
+    }
+
+    .faqAnswer p {
+        font-size: 12px;
+    }
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+.faqItem>button:focus-visible,
+.textLink:focus-visible {
+    outline: 3px solid #2563ff;
+    outline-offset: 5px;
+    border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .faqIntro,
+    .eyebrow,
+    .faqIntro h2,
+    .faqIntro>p:nth-of-type(2),
+    .textLink,
+    .accordion,
+    .faqItem,
+    .faqAnswer {
+        animation: none !important;
+    }
+
+    .textLink,
+    .textLink svg,
+    .faqItem,
+    .faqItem>button,
+    .faqItem button svg {
+        transition: none !important;
+    }
+
+    .textLink:hover,
+    .textLink:hover svg {
+        transform: none;
+    }
+}

@@ -1,0 +1,437 @@
+/* =========================
+   WORK / PROCESS SECTION
+========================= */
+
+.work {
+    background: #0b1f3a;
+    position: relative;
+    overflow: hidden;
+}
+
+.section {
+    padding: 96px 0;
+    min-height: 320px;
+    box-sizing: border-box;
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+.grid {
+    grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: clamp(48px, 7vw, 96px);
+    display: grid;
+}
+
+.container {
+    width: min(100% - 96px, 1280px);
+    margin-inline: auto;
+}
+
+/* =========================
+   PROCESS INTRO
+========================= */
+
+.processIntro {
+    max-width: 440px;
+    width: 100%;
+
+    animation: processIntroIn .8s ease-out both;
+}
+
+.eyebrow {
+    color: #8fb1ff;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    margin: 0 0 16px;
+    font-size: 12px;
+    font-weight: 800;
+
+    animation: processEyebrowIn .65s ease-out both;
+}
+
+.processIntro h2 {
+    letter-spacing: -.03em;
+    margin: 0;
+    font-size: clamp(2rem, 3.2vw, 2.65rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.16;
+
+    animation: processTitleIn .8s ease-out both;
+}
+
+.processIntro>p:last-child {
+    color: #aebed1;
+    line-height: 1.75;
+    font-size: 15px;
+    margin: 18px 0 0;
+
+    animation: processTextIn .8s ease-out both;
+}
+
+/* =========================
+   STEPS LIST
+========================= */
+
+.steps {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    animation: stepsContainerIn .8s ease-out both;
+}
+
+.steps li {
+    border-bottom: 1px solid #ffffff24;
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 22px;
+    padding: 26px 0;
+    display: grid;
+    align-items: center;
+
+    transition:
+        border-color .3s ease,
+        padding-left .3s ease;
+
+    animation: processStepIn .7s ease-out both;
+}
+
+.steps li:nth-child(1) {
+    animation-delay: .12s;
+}
+
+.steps li:nth-child(2) {
+    animation-delay: .24s;
+}
+
+.steps li:nth-child(3) {
+    animation-delay: .36s;
+}
+
+.steps li:first-child {
+    padding-top: 0;
+}
+
+.steps li:hover {
+    border-bottom-color: #8fb1ff70;
+    padding-left: 8px;
+}
+
+/* =========================
+   STEP NUMBER
+========================= */
+
+.steps li>span {
+    color: #8fb1ff;
+    border: 1px solid #ffffff40;
+    border-radius: 50%;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    font-size: 12px;
+    font-weight: 800;
+    display: grid;
+
+    transition:
+        color .3s ease,
+        background-color .3s ease,
+        border-color .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.steps li:hover>span {
+    color: #ffffff;
+    background: #2563ff;
+    border-color: #2563ff;
+    transform: scale(1.07);
+    box-shadow: 0 0 0 5px rgba(37, 99, 255, .12);
+}
+
+/* =========================
+   STEP TEXT
+========================= */
+
+.steps h3 {
+    color: #fff;
+    margin: 0 0 8px;
+    font-size: 17px;
+    font-weight: 750;
+    line-height: 1.4;
+
+    transition: color .25s ease;
+}
+
+.steps li:hover h3 {
+    color: #b8ccff;
+}
+
+.steps p {
+    color: #aebed1;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* =========================
+   TOP-LEVEL ANIMATIONS
+========================= */
+
+@keyframes processIntroIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes processEyebrowIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+        letter-spacing: .22em;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: .14em;
+    }
+}
+
+@keyframes processTitleIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes processTextIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes stepsContainerIn {
+    from {
+        opacity: 0;
+        transform: translateX(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes processStepIn {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media (max-width: 1200px) {
+    .container {
+        width: min(100% - 72px, 1280px);
+    }
+
+    .grid {
+        gap: 56px;
+    }
+
+    .processIntro h2 {
+        font-size: clamp(2rem, 3.5vw, 2.5rem);
+    }
+
+    .steps li {
+        gap: 18px;
+    }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+    .section {
+        padding: 76px 0;
+    }
+
+    .container {
+        width: min(100% - 56px, 1280px);
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .processIntro {
+        max-width: 600px;
+    }
+
+    .processIntro h2 {
+        font-size: clamp(2rem, 5vw, 2.6rem);
+        max-width: 540px;
+    }
+
+    .processIntro>p:last-child {
+        max-width: 540px;
+    }
+
+    .steps li {
+        padding: 22px 0;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+    .section {
+        padding: 60px 0;
+    }
+
+    .container {
+        width: min(100% - 32px, 1280px);
+    }
+
+    .grid {
+        gap: 30px;
+    }
+
+    .eyebrow {
+        font-size: 11px;
+        margin-bottom: 12px;
+    }
+
+    .processIntro h2 {
+        font-size: clamp(1.8rem, 7.5vw, 2.25rem);
+        line-height: 1.2;
+    }
+
+    .processIntro>p:last-child {
+        font-size: 14px;
+        line-height: 1.7;
+        margin-top: 14px;
+    }
+
+    .steps li {
+        grid-template-columns: 44px minmax(0, 1fr);
+        gap: 16px;
+        padding: 20px 0;
+    }
+
+    .steps li:first-child {
+        padding-top: 0;
+    }
+
+    .steps li>span {
+        width: 40px;
+        height: 40px;
+        font-size: 11px;
+    }
+
+    .steps h3 {
+        font-size: 15px;
+        margin-bottom: 6px;
+    }
+
+    .steps p {
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .steps li:hover {
+        padding-left: 4px;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+    .section {
+        padding: 48px 0;
+    }
+
+    .grid {
+        gap: 26px;
+    }
+
+    .steps li {
+        grid-template-columns: 38px minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .steps li>span {
+        width: 36px;
+        height: 36px;
+        font-size: 10px;
+    }
+
+    .steps h3 {
+        font-size: 14px;
+    }
+
+    .steps p {
+        font-size: 12px;
+    }
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .processIntro,
+    .eyebrow,
+    .processIntro h2,
+    .processIntro>p:last-child,
+    .steps,
+    .steps li {
+        animation: none !important;
+    }
+
+    .steps li,
+    .steps li>span,
+    .steps h3 {
+        transition: none !important;
+    }
+
+    .steps li:hover,
+    .steps li:hover>span {
+        transform: none;
+    }
+}

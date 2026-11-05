@@ -1,0 +1,499 @@
+/* =========================
+   MAIN CONTAINER
+   ========================= */
+
+.container {
+    width: 100%;
+    min-height: 412px;
+
+    padding: 60px clamp(24px, 5vw, 72px);
+
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.main {
+    width: 100%;
+    min-height: 350px;
+
+    box-sizing: border-box;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* =========================
+   SECTION HEADING
+   ========================= */
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 24px;
+    margin-bottom: 30px;
+
+    animation: categoryHeadingIn 0.8s ease both;
+}
+
+.heading p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Eyebrow */
+
+.explore {
+    color: #2563ff;
+
+    letter-spacing: .14em;
+    text-transform: uppercase;
+
+    margin: 0 0 14px;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* Main title */
+
+.left h2 {
+    color: #0b1f3a;
+
+    letter-spacing: -.03em;
+
+    margin: 0;
+
+    font-size: clamp(30px, 3vw, 40px);
+    font-weight: 800;
+    line-height: 1.16;
+}
+
+/* View all link */
+
+.view {
+    color: #2563ff;
+
+    align-items: center;
+    gap: 7px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+    display: inline-flex;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.view svg {
+    transition: transform 0.3s ease;
+}
+
+.view:hover {
+    color: #0b1f3a;
+    transform: translateX(2px);
+}
+
+.view:hover svg {
+    transform: translateX(5px);
+}
+
+/* =========================
+   CATEGORY GRID
+   ========================= */
+
+.categoryContainer {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+
+    width: 100%;
+}
+
+/* =========================
+   CATEGORY CARD
+   ========================= */
+
+.categoryCard {
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+
+    border: 1px solid #dce3ed;
+    border-radius: 13px;
+
+    box-sizing: border-box;
+    background: #fff;
+
+    cursor: pointer;
+
+    animation: categoryCardIn 0.7s ease both;
+
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s ease,
+        border-color 0.3s ease;
+}
+
+/* Staggered entrance */
+
+.categoryCard:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.categoryCard:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.categoryCard:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.categoryCard:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Unified card hover */
+
+.categoryCard:hover {
+    transform: translateY(-6px);
+
+    border-color: #c4d5ff;
+
+    box-shadow: 0 16px 35px rgba(11, 31, 58, 0.09);
+}
+
+/* =========================
+   CATEGORY IMAGE
+   ========================= */
+
+.categoryImage {
+    width: 100%;
+    height: 310px;
+
+    overflow: hidden;
+    background: #f8fafc;
+}
+
+.categoryImage img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+
+    transition:
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.4s ease;
+}
+
+.categoryCard:hover .categoryImage img {
+    transform: scale(1.055);
+}
+
+/* =========================
+   CATEGORY INFORMATION
+   ========================= */
+
+.categoryInfo {
+    min-height: 70px;
+
+    padding: 18px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    box-sizing: border-box;
+
+    background: #fff;
+
+    transition: background-color 0.3s ease;
+}
+
+.categoryInfo h3 {
+    font-size: 16px;
+    font-weight: 700;
+
+    margin: 0;
+
+    color: #0b1f3a;
+    line-height: 1.4;
+
+    transition: color 0.3s ease;
+}
+
+/* Circular arrow */
+
+.categoryInfo span {
+    width: 34px;
+    height: 34px;
+
+    color: #2563ff;
+
+    display: grid;
+    place-items: center;
+
+    background: #eff5ff;
+    border-radius: 50%;
+
+    flex-shrink: 0;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.categoryInfo span svg {
+    transition: transform 0.3s ease;
+}
+
+/* Card hover interactions */
+
+.categoryCard:hover .categoryInfo h3 {
+    color: #2563ff;
+}
+
+.categoryCard:hover .categoryInfo span {
+    background: #2563ff;
+    color: #fff;
+
+    transform: scale(1.08);
+}
+
+.categoryCard:hover .categoryInfo span svg {
+    transform: translateX(2px);
+}
+
+/* =========================
+   TOP-LEVEL ANIMATIONS
+   ========================= */
+
+@keyframes categoryHeadingIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes categoryCardIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   LAPTOP RESPONSIVENESS
+   ========================= */
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 50px 4%;
+    }
+
+    .categoryContainer {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .categoryImage {
+        height: 260px;
+    }
+
+    .categoryInfo {
+        padding: 16px;
+    }
+
+    .categoryInfo h3 {
+        font-size: 14px;
+    }
+}
+
+/* =========================
+   TABLET RESPONSIVENESS
+   ========================= */
+
+@media (max-width: 900px) {
+    .container {
+        padding: 45px 28px;
+    }
+
+    .heading {
+        margin-bottom: 24px;
+    }
+
+    .left h2 {
+        font-size: 32px;
+    }
+
+    .explore {
+        font-size: 10px;
+    }
+
+    .view {
+        font-size: 12px;
+    }
+
+    .categoryContainer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .categoryImage {
+        height: clamp(220px, 35vw, 300px);
+    }
+
+    .categoryInfo {
+        min-height: 65px;
+        padding: 16px 20px;
+    }
+
+    .categoryInfo h3 {
+        font-size: 15px;
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+   ========================= */
+
+@media (max-width: 600px) {
+    .container {
+        padding: 40px 20px;
+        min-height: auto;
+    }
+
+    .heading {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .explore {
+        margin-bottom: 10px;
+        font-size: 10px;
+    }
+
+    .left h2 {
+        font-size: clamp(28px, 7vw, 36px);
+    }
+
+    .view {
+        font-size: 13px;
+    }
+
+    .categoryContainer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .categoryImage {
+        height: clamp(155px, 48vw, 240px);
+    }
+
+    .categoryCard {
+        border-radius: 10px;
+    }
+
+    .categoryInfo {
+        min-height: 60px;
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .categoryInfo h3 {
+        font-size: 13px;
+        line-height: 1.35;
+    }
+
+    .categoryInfo span {
+        width: 28px;
+        height: 28px;
+    }
+
+    .categoryInfo span svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* =========================
+   SMALL MOBILE DEVICES
+   ========================= */
+
+@media (max-width: 380px) {
+    .container {
+        padding: 35px 14px;
+    }
+
+    .categoryContainer {
+        gap: 10px;
+    }
+
+    .categoryImage {
+        height: 145px;
+    }
+
+    .categoryInfo {
+        padding: 10px;
+    }
+
+    .categoryInfo h3 {
+        font-size: 12px;
+    }
+
+    .categoryInfo span {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* =========================
+   ACCESSIBILITY
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .heading,
+    .categoryCard {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .categoryCard,
+    .categoryImage img,
+    .categoryInfo h3,
+    .categoryInfo span,
+    .categoryInfo span svg,
+    .view,
+    .view svg {
+        transition: none;
+    }
+}
